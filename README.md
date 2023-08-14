@@ -55,11 +55,7 @@ https://blog.csdn.net/Beihai_Van/article/details/125793806?ops_request_misc=&req
 解决方法：加个`ESP.restore` 在连接不上WiFi时,尝试重启ESP32
 
 # 参考资料
-- 图文手把手教程--ESP32 MQTT对接EMQX本地服务器(VSCODE+ESP-IDF) 
-(https://blog.csdn.net/felix_tao/article/details/125882339?spm=1001.2014.3001.5506)
-- MQTT服务器搭建和ESP32实现MQTT代码 
-(https://blog.csdn.net/wcc243588569/article/details/123557400?spm=1001.2014.3001.5506)
-- ESP32 连接到免费的公共 MQTT 服务器
-(https://www.emqx.com/zh/blog/esp32-connects-to-the-free-public-mqtt-broker?utm_source=mqttx&utm_medium=referral&utm_campaign=mqttx-help-to-blog)
-- ESP8266 + MQTT ：如何实现 LED 灯的远程控制 
-(https://www.emqx.com/zh/blog/esp8266_mqtt_led)
+- [图文手把手教程--ESP32 MQTT对接EMQX本地服务器(VSCODE+ESP-IDF)](https://blog.csdn.net/felix_tao/article/details/125882339?spm=1001.2014.3001.5506)
+- [MQTT服务器搭建和ESP32实现MQTT代码](https://blog.csdn.net/wcc243588569/article/details/123557400?spm=1001.2014.3001.5506)
+- [ESP32 连接到免费的公共 MQTT 服务器](https://www.emqx.com/zh/blog/esp32-connects-to-the-free-public-mqtt-broker?utm_source=mqttx&utm_medium=referral&utm_campaign=mqttx-help-to-blog)
+- [ESP8266 + MQTT ：如何实现 LED 灯的远程控制](https://www.emqx.com/zh/blog/esp8266_mqtt_led)
