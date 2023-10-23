@@ -5,9 +5,9 @@
 本项目使用ESP32通讯板及继电器对快速门电机控制器进行控制，并使用`MQTT`向本地服务器`EMQX`进行通讯。
 如需修改，请先参阅[乐鑫科技](https://www.espressif.com.cn/en/products/sdks/esp-idf)中的开发引导了解ESP32模组开发相关概念和乐鑫物联网开发框架。
 
-调试过程可对接EMQX本地服务器，可参考这篇博客 [图文手把手教程--ESP32 MQTT对接EMQX本地服务器(VSCODE+ESP-IDF)](https://blog.csdn.net/felix_tao/article/details/125882339?spm=1001.2014.3001.5506)
+调试过程可对接EMQX本地服务器，可参考这篇博客:[图文手把手教程--ESP32 MQTT对接EMQX本地服务器(VSCODE+ESP-IDF)](https://blog.csdn.net/felix_tao/article/details/125882339?spm=1001.2014.3001.5506)
 
-项目仓库地址 [WiFi-servo-controller](https://github.com/Kanomace/WiFi-servo-controller)
+项目仓库地址:[WiFi-servo-controller](https://github.com/Kanomace/WiFi-servo-controller)
 
 ```bash
 .根目录
@@ -47,19 +47,19 @@
 1. **远程控制开关门:订阅MQTT开关门控制主题**
 
 - 主题名称: `DoorControl`
-- 内容格式: `DoorControl/ID/Sender/Operation`
+- 内容格式: `DoorControl/ID/Sender/Operation`<br>
 其中:
 - ***DoorControl*** : 远程控制开关门：订阅MQTT开关门控制主题。
 - ***ID***          : 表示通讯板的ID，使用三位数字表示。( `001`: 001号通讯板，`031` : 031号通讯板)
 - ***Sender***      : 表示信息传输方。(`TX`:服务器传输给通讯板的指令,`RX`:通讯板传输给服务器的信息)      
-- ***Operation***   : 表示此次信息执行的操作。(`1`: 开门, `0`: 关门, `-1`: 停止)
+- ***Operation***   : 表示此次信息执行的操作。(`1`: 开门, `0`: 关门, `-1`: 停止)<br>
 例如 :
 `DoorControl/001/TX/1` 表示001号**通讯板**接收到来自**服务器**的推送信息，执行相应的关门动作。通讯板返回信息`DoorControl/001/RX/1` 
 
 2. **定时设置:订阅定时设置主题**
 
 - 主题名称: `TimerSetting`
-- 内容格式: `TimerSetting/ID/Sender/Operation/Hour/min`
+- 内容格式: `TimerSetting/ID/Sender/Operation/Hour/min`<br>
 其中:
 - ***TimerSetting*** : 远程控制开关门：订阅MQTT开关门控制主题。
 - ***ID***           : 表示通讯板的ID，使用三位数字表示。( `001`: 1号通讯板，`031` : 31号通讯板)
@@ -67,7 +67,7 @@
 - ***Operation***    : 表示此次信息执行的操作。(`1`: 定时开启, `0`: 定时关闭, `-1`: 关闭定时功能)
 - ***Group***        : 表示定时器设置的组别，一个通讯板默认设置十个定时器。(`0`~`9`: 定时组别)
 - ***Hour***         : 表示定时功能的时钟设置。(`07`: 7时XX分 , `11`: 11时XX分)
-- ***min***          : 表示定时功能的分钟设置。(`04`: XX时04分, `59`: XX时59分)
+- ***min***          : 表示定时功能的分钟设置。(`04`: XX时04分, `59`: XX时59分)<br>
 例如:
 `TimerSetting/001/TX/1/0/07/04` 表示001号**通讯板**接收到来自**服务器**的推送信息，第0组定时器使能，在07:04时刻打开风门。通讯板返回信息`TimerSetting/001/RX/1/0/07/04`
 `TimerSetting/001/TX/0/5/11/59` 表示001号**通讯板**接收到来自**服务器**的推送信息，第5组定时器使能，在11:59时刻关闭风门。通讯板返回信息`“TimerSetting/001/RX/0/5/11/59`
@@ -76,11 +76,11 @@
 3. **查询定时列表:查询通讯板定时设置主题**
 
 - 主题名称：`Listing`
-- 信息格式  `Listing/ID/TX`
+- 信息格式  `Listing/ID/TX`<br>
 其中:
 - ***Listing***    : 远程控制开关门：订阅MQTT开关门控制主题。
 - ***ID***         : 表示通讯板的ID，使用三位数字表示。( `001`: 1号通讯板，`031` : 31号通讯板)
-- ***Sender***     : 表示信息传输方。(`TX`:服务器传输给通讯板的指令,`RX`:通讯板传输给服务器的信息)      
+- ***Sender***     : 表示信息传输方。(`TX`:服务器传输给通讯板的指令,`RX`:通讯板传输给服务器的信息)   <br>   
   例如:
 `Listing/001/TX`表示001号**通讯板**接收到来自**服务器**的推送信息。
 通讯板返回信息`Listing/ID/RX/Group1/state/hour/min/Group2/state/hour/min/Group3……`
@@ -91,7 +91,7 @@
 
 解决方法：加个定时器标志位，在`main`中执行中断函数
 参考博客：
-(https://blog.csdn.net/Beihai_Van/article/details/125793806?ops_request_misc=&request_id=&biz_id=102&utm_term=sGuru%20Meditation%20Error:%20Core%20%20&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-125793806.142^v92^insert_down28v1&spm=1018.2226.3001.4187)
+[ESP32触发定时器中断后无限重启](https://blog.csdn.net/Beihai_Van/article/details/125793806?ops_request_misc=&request_id=&biz_id=102&utm_term=sGuru%20Meditation%20Error:%20Core%20%20&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-125793806.142^v92^insert_down28v1&spm=1018.2226.3001.4187)
 
 2. **隔次开机会有概率连接不上WiFi网络**
 
