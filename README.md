@@ -1,3 +1,6 @@
+# WiFi-servo-controller
+
+目录
 - [WiFi-servo-controller](#wifi-servo-controller)
   - [概述](#概述)
   - [系统架构](#系统架构)
@@ -7,10 +10,6 @@
   - [修改WiFi信息](#修改wifi信息)
   - [开发日记](#开发日记)
   - [参考资料](#参考资料)
-
----
-
-# WiFi-servo-controller
 
 ## 概述
 
