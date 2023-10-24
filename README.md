@@ -2,12 +2,12 @@
 
 ## 概述
 
-本项目使用ESP32及继电器对快速门电机控制器进行控制，并使用`MQTT`向本地服务器`EMQX`进行通讯。
+本项目基于`Arduino`环境下的ESP32开发。使用ESP32及继电器对快速门电机控制器进行控制，并使用`MQTT`向本地服务器`EMQX`进行通讯。
 如需修改，请先参阅[乐鑫科技](https://www.espressif.com.cn/en/products/sdks/esp-idf)中的开发引导了解ESP32模组开发相关概念和乐鑫物联网开发框架。
 
 调试过程可对接EMQX本地服务器，可参考这篇博客:[图文手把手教程--ESP32 MQTT对接EMQX本地服务器(VSCODE+ESP-IDF)](https://blog.csdn.net/felix_tao/article/details/125882339?spm=1001.2014.3001.5506)
 
-项目仓库地址:[WiFi-servo-controller](https://github.com/Kanomace/WiFi-servo-controller)
+首先从**WiFi-servo-controller**[Github仓库](https://github.com/Kanomace/WiFi-servo-controller)获取项目资料，获取到的资料目录结构如下:
 
 ```bash
 .根目录
@@ -23,9 +23,9 @@
 │   │   ├── MQTT_connect.ino           MQTT连接例程
 │   │   └── MQTT_control.ino           MQTT控制例程
 │   └── main
-│       └── main20230813.ino           通讯板烧录代码
+│       └── main20230813.ino           ESP32代码
 ├── System architecture
-│   └── 架构图                         系统整体架构
+│   └── architectureV2                 系统整体架构
 ├── .git                               git仓库文件
 ├── .gitattributes                     git仓库文件
 └── README.md               
@@ -33,7 +33,7 @@
 ## 系统架构
 
 <center>
-<img src = "System architecture/architectureV2.jpg">
+<img src = "Fig/architectureV2.jpg">
 </center>
 
 ## 硬件连接
@@ -43,9 +43,11 @@
 - H7(下行端口)  ->  **IO26**  
 - H8(停止端口)  ->  **IO27**  
 
-## 软件开发
+## 程序执行流程
 
-本项目基于`Arduino`环境下的ESP32开发。
+<center>
+<img src = "Fig/softwareV1.jpg">
+</center>
  
 ## 通信协议
 
