@@ -46,7 +46,7 @@
 ## 程序执行流程
 
 <center>
-<img src = "Fig/softwareV1.jpg" width = "814" height = "1073">
+<img src = "Fig/softwareV1.jpg" width = "407" height = "536">
 </center>
  
 ## 通信协议
