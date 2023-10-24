@@ -97,13 +97,13 @@
 - 主题名称: `Heartbeat`
 - 信息格式: `Heartbeat/ID/TX`
 <br>其中:
-- ***Listing***    : 远程控制开关门：订阅MQTT开关门控制主题。
+- ***Heartbeat***    : 远程控制开关门：订阅MQTT开关门控制主题。
 - ***ID***         : 表示通讯板的ID，使用三位数字表示。( `001`: 1号通讯板，`031` : 31号通讯板)
 - ***Sender***     : 表示信息传输方。(`TX`:服务器传输给通讯板的指令,`RX`:通讯板传输给服务器的信息)
 
 心跳包机制为接收到信息格式 `Heartbeat/ID/TX`的心跳请求时，返回`Heartbeat/ID/RX`的心跳信息      
 <br>例如:
-<br>`Listing/001/TX`表示**001号通讯板**接收到来自**服务器**的推送信息。
+<br>`Heartbeat/001/TX`表示**001号通讯板**接收到来自**服务器**的推送信息。
 <br>通讯板返回信息`Heartbeat/ID/RX`
 
 ## 修改WiFi信息
@@ -137,6 +137,7 @@ const char *password = "88888888";  // Enter WiFi password
 << huangjiacheng
 >> Enter your WiFi name
 << 88888888
+>> OK
  ```
 
 ## 开发日记
