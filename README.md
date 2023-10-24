@@ -97,7 +97,7 @@
 
  通讯板可通过两种方法修改内置WiFi信息
 
- 1. 修改`Software/main/main.ino`中内置WiFi信息，并通过*Arduino.ide*烧录
+ 1. **修改`Software/main/main.ino`中内置WiFi信息，并通过*Arduino.ide*烧录**
 
  ```c
  // WiFi
@@ -106,7 +106,7 @@ const char *password = "88888888";  // Enter WiFi password
  ```
  用户需要根据采用的`WiFi`的具体信息进行适配操作
 
- 2. 使用串口进行WiFi信息修改
+ 2. **使用串口进行WiFi信息修改**
 
  使用`CH340`或其他USB转TTL模块连接ESP32通讯板与PC
  PC上用户可通过任意串口调试软件[推荐使用*Arduino.ide*](https://www.arduino.cc/en/software)
