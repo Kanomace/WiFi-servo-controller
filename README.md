@@ -93,7 +93,7 @@
 <br>`Listing/001/TX`表示**001号通讯板**接收到来自**服务器**的推送信息。
 通讯板返回信息`Listing/ID/RX/Group1/state/hour/min/Group2/state/hour/min/Group3……`
 
-3. **心跳包机制**
+4. **心跳包机制**
 - 主题名称: `Heartbeat`
 - 信息格式: `Heartbeat/ID/TX`
 <br>其中:
