@@ -176,6 +176,8 @@ const char *password = "88888888";  // Enter WiFi password
 导致原因未知 
 <br>解决方法：使用ESP内置函数`ESP.restore` 在连接不上WiFi时,尝试重启ESP32
 
+---
+
 ## 参考资料
 - [图文手把手教程--ESP32 MQTT对接EMQX本地服务器(VSCODE+ESP-IDF)](https://blog.csdn.net/felix_tao/article/details/125882339?spm=1001.2014.3001.5506)
 - [MQTT服务器搭建和ESP32实现MQTT代码](https://blog.csdn.net/wcc243588569/article/details/123557400?spm=1001.2014.3001.5506)
