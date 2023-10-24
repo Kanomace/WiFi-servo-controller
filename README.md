@@ -33,7 +33,7 @@
 ## 系统架构
 
 <center>
-<img src = "Fig/architectureV2.jpg">
+<img src = "Fig/architectureV2.jpg" width = "513" height = "837">
 </center>
 
 ## 硬件连接
