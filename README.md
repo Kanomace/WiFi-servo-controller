@@ -2,7 +2,7 @@
 
 ## 概述
 
-本项目使用ESP32通讯板及继电器对快速门电机控制器进行控制，并使用`MQTT`向本地服务器`EMQX`进行通讯。
+本项目使用ESP32及继电器对快速门电机控制器进行控制，并使用`MQTT`向本地服务器`EMQX`进行通讯。
 如需修改，请先参阅[乐鑫科技](https://www.espressif.com.cn/en/products/sdks/esp-idf)中的开发引导了解ESP32模组开发相关概念和乐鑫物联网开发框架。
 
 调试过程可对接EMQX本地服务器，可参考这篇博客:[图文手把手教程--ESP32 MQTT对接EMQX本地服务器(VSCODE+ESP-IDF)](https://blog.csdn.net/felix_tao/article/details/125882339?spm=1001.2014.3001.5506)
@@ -30,6 +30,11 @@
 ├── .gitattributes                     git仓库文件
 └── README.md               
 ```
+## 系统架构
+
+<center>
+<img src = "System architecture/architectureV2.jpg">
+</center>
 
 ## 硬件连接
 
@@ -96,7 +101,7 @@
 2. **隔次开机会有概率连接不上WiFi网络**
 
 导致原因未知 
-解决方法：使用ESP内置函数`ESP.restore` 在连接不上WiFi时,尝试重启ESP32
+<br>解决方法：使用ESP内置函数`ESP.restore` 在连接不上WiFi时,尝试重启ESP32
 
 ## 参考资料
 - [图文手把手教程--ESP32 MQTT对接EMQX本地服务器(VSCODE+ESP-IDF)](https://blog.csdn.net/felix_tao/article/details/125882339?spm=1001.2014.3001.5506)
