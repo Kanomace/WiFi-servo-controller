@@ -5,27 +5,28 @@
 本项目基于`Arduino`环境下的ESP32开发。使用ESP32及继电器对快速门电机控制器进行控制，并使用`MQTT`向本地服务器`EMQX`进行通讯。
 如需修改，请先参阅[乐鑫科技](https://www.espressif.com.cn/en/products/sdks/esp-idf)中的开发引导了解ESP32模组开发相关概念和乐鑫物联网开发框架。
 
-调试过程可对接EMQX本地服务器，可参考这篇博客:[图文手把手教程--ESP32 MQTT对接EMQX本地服务器(VSCODE+ESP-IDF)](https://blog.csdn.net/felix_tao/article/details/125882339?spm=1001.2014.3001.5506)
+调试过程可对接EMQX本地服务器，具体教程可参考这篇博客:[图文手把手教程--ESP32 MQTT对接EMQX本地服务器(VSCODE+ESP-IDF)](https://blog.csdn.net/felix_tao/article/details/125882339?spm=1001.2014.3001.5506)
 
 首先从**WiFi-servo-controller**[Github仓库](https://github.com/Kanomace/WiFi-servo-controller)获取项目资料，获取到的资料目录结构如下:
 
 ```bash
 .根目录
 ├── Cloud Server
-├── Hardware
+├── Hardware                           硬件资料
 │   ├── BOM_V1_2023-08-09              硬件接线图
 │   ├── BOM_V1_2023-08-09              物料清单
 │   ├── Gerber_V1_2023-08-09           PCB制版文件
 │   ├── PCB_V1_2023-08-09              PCB文件
 │   └── SCH_Schematic_V1_2023-08-09    原理图文件
-├── Software
-│   ├── Example
+├── Software                           软件资料
+│   ├── Example                        参考例程
 │   │   ├── MQTT_connect.ino           MQTT连接例程
 │   │   └── MQTT_control.ino           MQTT控制例程
 │   └── main
 │       └── main20230813.ino           ESP32代码
-├── System architecture
-│   └── architectureV2                 系统整体架构
+├── Fig                                图表
+│   ├── architectureV2.jpg             系统整体架构图
+│   └── software.jpg                   程序执行流程图
 ├── .git                               git仓库文件
 ├── .gitattributes                     git仓库文件
 └── README.md               
@@ -91,6 +92,39 @@
 <br>例如:
 <br>`Listing/001/TX`表示001号**通讯板**接收到来自**服务器**的推送信息。
 通讯板返回信息`Listing/ID/RX/Group1/state/hour/min/Group2/state/hour/min/Group3……`
+
+## 修改WiFi信息
+
+ 通讯板可通过两种方法修改内置WiFi信息
+
+ 1. 修改`Software/main/main.ino`中内置WiFi信息，并通过*Arduino.ide*烧录
+
+ ```c
+ // WiFi
+const char *ssid = "huangjiacheng"; // Enter your WiFi name
+const char *password = "88888888";  // Enter WiFi password
+ ```
+ 用户需要根据采用的`WiFi`的具体信息进行适配操作
+
+ 2. 使用串口进行WiFi信息修改
+
+ 使用`CH340`或其他USB转TTL模块连接ESP32通讯板与PC
+ PC上用户可通过任意串口调试软件(推荐使用*Arduino.ide*)[https://www.arduino.cc/en/software]
+ `MCU`通信串口硬件配置为：**波特率115200、8位有效数据、无奇偶校验、1位停止位**
+
+串口接线:
+- **PC**   --  **ESP32**
+- **TXD**  --  **IO9** 
+- **RXD**  --  **IO10**  
+- **GND**  --  **GND**  
+
+ ```c
+<< changeWIFI\n
+>> Enter your WiFi name
+<< huangjiacheng
+>> Enter your WiFi name
+<< 88888888
+ ```
 
 ## 开发日记
 
