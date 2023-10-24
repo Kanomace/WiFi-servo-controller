@@ -109,7 +109,7 @@ const char *password = "88888888";  // Enter WiFi password
  2. **使用串口进行WiFi信息修改**
 
  使用`CH340`或其他USB转TTL模块连接ESP32通讯板与PC
- PC上用户可通过任意串口调试软件[推荐使用*Arduino.ide*](https://www.arduino.cc/en/software)
+<br> PC上用户可通过任意串口调试软件[推荐使用*Arduino.ide*](https://www.arduino.cc/en/software)
  `MCU`通信串口硬件配置为：**波特率115200、8位有效数据、无奇偶校验、1位停止位**
 
 串口接线:
