@@ -1,4 +1,4 @@
-@[TOC](文章目录)
+[TOC](文章目录)
 
 ---
 
@@ -35,11 +35,15 @@
 ├── .gitattributes                     git仓库文件
 └── README.md               
 ```
+---
+
 ## 系统架构
 
 <center>
 <img src = "Fig/architecture.jpg" width = "628" height = "385">
 </center>
+
+---
 
 ## 硬件连接
 
@@ -48,12 +52,16 @@
 - H7(下行端口)  ->  **IO26**  
 - H8(停止端口)  ->  **IO27**  
 
+---
+
 ## 程序执行流程
 
 <center>
 <img src = "Fig/software.jpg" width = "407" height = "536">
 </center>
  
+---
+
 ## 通信协议
 
 1. **远程控制开关门:订阅MQTT开关门控制主题**
@@ -110,6 +118,8 @@
 <br>`Heartbeat/001/TX`表示**001号通讯板**接收到来自**服务器**的推送信息。
 <br>通讯板返回信息`Heartbeat/ID/RX`
 
+---
+
 ## 修改WiFi信息
 
  通讯板可通过两种方法修改内置WiFi信息
@@ -143,6 +153,8 @@ const char *password = "88888888";  // Enter WiFi password
 << 88888888
 >> OK
  ```
+
+---
 
 ## 开发日记
 
