@@ -156,7 +156,7 @@ const char *password = "88888888";  // Enter WiFi password
 << changeWIFI\n
 >> Enter your WiFi name
 << huangjiacheng
->> Enter your WiFi name
+>> Enter your password
 << 88888888
 >> OK
  ```
